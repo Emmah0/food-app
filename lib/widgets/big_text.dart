@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_app/utils/dimensions.dart';
 
 // ignore: must_be_immutable
 class BigText extends StatelessWidget {
@@ -9,7 +10,7 @@ class BigText extends StatelessWidget {
    // ignore: use_super_parameters
    BigText({Key? key, this.color = const Color(0xFF332d2b), 
    required this.text,
-  this.size=20,
+  this.size=0,
   this.overFlow=TextOverflow.ellipsis
   }):super(key: key);
 
@@ -17,10 +18,12 @@ class BigText extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       text,
+      maxLines: 1,
       overflow: overFlow,
       style: TextStyle(
         fontFamily: 'Roboto',
         color: color,
+        fontSize: size==0?Dimensions.font20:size,
         fontWeight: FontWeight.w400
 
       ),
