@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:food_app/Home/main_food_page.dart';
+import 'package:food_app/pages/food/recommended_food_detail.dart';
 import 'package:get/get.dart';
 
 void main() {
@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         
       ),
-      home: MainFoodPage()
+      home: RecommendedFoodDetail()
     );
   }
 }

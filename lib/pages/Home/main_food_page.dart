@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:food_app/Home/food_page_body.dart';
+import 'package:food_app/pages/Home/food_page_body.dart';
 import 'package:food_app/utils/colors.dart';
 import 'package:food_app/utils/dimensions.dart';
 import 'package:food_app/widgets/big_text.dart';
@@ -45,12 +45,13 @@ class _MainFoodPageState extends State<MainFoodPage> {
             child: Container(
               width:  Dimensions.height45,
               height: Dimensions.height45,
-              child: Icon(Icons.search,color: Colors.white,
-              size: Dimensions.iconSize24,),
+              
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(Dimensions.radius15),
                 color: AppColors.mainColor,
               ),
+              child: Icon(Icons.search,color: Colors.white,
+              size: Dimensions.iconSize24,),
               
 
             ),
@@ -63,7 +64,9 @@ class _MainFoodPageState extends State<MainFoodPage> {
      
        ),
         //showing the body
-        FoodPageBody(),
+        Expanded(child: SingleChildScrollView(
+        child: FoodPageBody() ,
+        ) ),
         ],
       
       )
